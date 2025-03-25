@@ -11,7 +11,7 @@ import SwiftUI
 @MainActor final class AppetizerListViewModel: ObservableObject {
     
     @Published var appetizers: [Appetizer] = []
-    @Published var alertItem: AlertItem?
+//    @Published var alertItem: AlertItem?
     @Published var isLoading = false
     @Published var isShowingDetail = false
     @Published var selectedAppetizer: Appetizer?
