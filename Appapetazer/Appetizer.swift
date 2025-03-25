@@ -1,13 +1,11 @@
 //
 //  Appetizer.swift
-//  Appetizers
+//  Appapetazer
 //
-//  Created by Sean Allen on 11/12/20.
+//  Created by Muhammadjon on 19/03/25.
 //
-
 
 import Foundation
-
 
 struct Appetizer: Decodable, Identifiable {
     let id: Int

@@ -9,7 +9,18 @@ import SwiftUI
 
 struct AppetizerTabView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView {
+            Tab("Home", systemImage: "house") {
+                AppetizerListView()
+            }
+            Tab("Account", systemImage: "person") {
+                AppetizerAccountView()
+            }
+            Tab("Order", systemImage: "bag") {
+                AppetizerOrderView()
+            }
+        }
+        .tint(.green)
     }
 }
 

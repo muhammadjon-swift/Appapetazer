@@ -1,9 +1,10 @@
 //
 //  AppetizerListViewModel.swift
-//  Appetizers
+//  Appapetazer
 //
-//  Created by Sean Allen on 11/12/20.
+//  Created by Muhammadjon on 23/03/25.
 //
+
 
 import SwiftUI
 
