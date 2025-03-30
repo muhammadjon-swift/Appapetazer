@@ -13,14 +13,15 @@ struct AppetizerListCell: View {
     
     var body: some View {
         HStack {
-            Image(systemName: "house")
-                .resizable()
-                .frame(width: 100, height: 50)
-            
+            AppetizerRemoteImage(urlString: appetizer.imageURL)
+                .frame(width: 120, height: 90)
+                .clipShape(.buttonBorder)
             VStack(alignment: .leading, spacing: 8) {
                 Text(appetizer.name)
                     .font(.headline)
-                Text("$8.98")
+                Text("$ \(appetizer.price, specifier: "%.2f")")
+                    .foregroundStyle(.secondary)
+                    .fontWeight(.semibold)
             }
             .padding(.leading)
             

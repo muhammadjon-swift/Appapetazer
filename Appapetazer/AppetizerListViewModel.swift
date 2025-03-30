@@ -21,8 +21,8 @@ import SwiftUI
          
              NetworkManager.shared.getAppetizers { [weak self] result in
                  guard let self = self else { return }
-                 isLoading = false
                  DispatchQueue.main.async {
+                     self.isLoading = false
                      switch result {
                      case .success(let success):
                          self.appetizers = success
