@@ -9,11 +9,11 @@ import SwiftUI
 
 struct AppetizerListView: View {
     
-    @State var appetizers: [Appetizer] = []
+    @StateObject var viewModel = AppetizerListViewModel()
     
     var body: some View {
         NavigationStack {
-            List(appetizers, id: \.id) { appetizer  in
+            List(viewModel.appetizers, id: \.id) { appetizer  in
                 AppetizerListCell(appetizer: appetizer)
                 
             }
@@ -22,24 +22,20 @@ struct AppetizerListView: View {
         .navigationBarTitleDisplayMode(.large)
         
         .onAppear {
-            getAppetizers()
+            viewModel.getAppetizers()
         }
+        .alert(item: $viewModel.alertItem) { alertItem in
+            Alert(title: alertItem.title, message: alertItem.message, dismissButton: alertItem.dismissButton)
+        }
+        
+        
+        
+        
     }
     
-    func getAppetizers() {
-        DispatchQueue.main.async {
-            NetworkManager.shared.getAppetizers { result in
-                switch result {
-                case .success(let success):
-                    self.appetizers = success
-                    print(success)
-                case .failure(let failure):
-                    print(failure.localizedDescription)
-                }
-            }
-        }
+ 
   
-    }
+    
 }
 
 #Preview {
